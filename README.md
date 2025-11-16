@@ -264,5 +264,5 @@ MIT License
 
 ## 联系方式
 
-- 项目地址: https://github.com/lcd955/AI_recommendation_for_finaical
+- 项目地址: https://github.com/lcd955/AI-assisant
 - 问题反馈: Issues
