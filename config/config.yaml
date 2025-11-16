@@ -1,0 +1,77 @@
+# Application Configuration
+app:
+  name: "AI Financial Recommendation System"
+  version: "1.0.0"
+  environment: "development"
+
+# Dialogue Engine Configuration
+dialogue_engine:
+  model_name: "Qwen/Qwen-7B"  # Can be replaced with Llama-3-Fin or Qwen-Finance
+  max_history_length: 10
+  temperature: 0.7
+  max_tokens: 512
+  
+# Speech Configuration
+speech:
+  asr:
+    language: "zh-CN"
+    engine: "google"
+  tts:
+    language: "zh-CN"
+    rate: 150
+    volume: 0.9
+
+# User Profile Configuration
+user_profile:
+  data_sources:
+    - "transaction_history"
+    - "bill_classification"
+    - "risk_assessment"
+    - "behavior_logs"
+    - "credit_info"
+  
+  gnn:
+    embedding_dim: 128
+    num_layers: 3
+    dropout: 0.2
+    
+# Recommendation Configuration
+recommendation:
+  rl:
+    algorithm: "PPO"
+    learning_rate: 0.0003
+    gamma: 0.99
+    batch_size: 64
+    
+  strategies:
+    young_professional:
+      focus: ["auto_savings", "low_threshold_investing"]
+    middle_aged_family:
+      focus: ["education_insurance", "stable_funds"]
+    retired:
+      focus: ["principal_safety", "high_dividend_stocks"]
+
+# Explainability Configuration
+explainability:
+  enabled: true
+  detail_level: "high"  # low, medium, high
+  include_confidence_scores: true
+  
+# API Configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins: ["*"]
+  
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level} | {message}"
+  file: "logs/app.log"
+
+# Database Configuration
+database:
+  type: "mongodb"
+  host: "localhost"
+  port: 27017
+  name: "financial_ai"
